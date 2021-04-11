@@ -23,20 +23,7 @@ class MiNav extends HTMLElement {
          </span>
         Historial
       </a>
-      <a href="gps.html">
-        <span
-          class="material-icons">
-          location_searching
-        </span>
-        GPS
-      </a>
-      <a href="archivos.html">
-        <span
-          class="material-icons">
-          attach_file
-        </span>
-        Archivos
-      </a>
+      
       <a href="ayuda.html">
         <span
           class="material-icons">
