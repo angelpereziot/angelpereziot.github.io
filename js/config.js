@@ -11,7 +11,7 @@ class MiNav extends HTMLElement {
         </span>
         Inicio
       </a>
-      <a href="formulario.html">
+      <a href="dispositivo.html">
         <span class="material-icons">
           smartphone
           </span>
