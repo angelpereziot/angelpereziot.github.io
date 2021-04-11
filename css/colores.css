@@ -15,7 +15,7 @@ html {
   /* Los 2 primeros fonts son para
    * apple y "Roboto" es para
    * Android. */
-  --fontFamily: -apple-system,
+  --fontFamily: -apple-system, 
     BlinkMacSystemFont, Roboto,
     sans-serif;
   color: var(--colContenido);
