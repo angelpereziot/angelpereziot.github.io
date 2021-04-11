@@ -1,4 +1,4 @@
-input[type=radio],
+/*input[type=radio],
 input[type=radio]:checked~.off,
 input[type=checkbox],
 input[type=checkbox]:checked~.off {
@@ -21,7 +21,7 @@ input[type=checkbox]:not(:checked)~.on {
   color: var(--colCheckOn);
   font-size: 48px;
 }
-
+*/
 campo-dinamico {
   display: block;
   position: relative;
