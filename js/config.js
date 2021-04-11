@@ -17,6 +17,13 @@ class MiNav extends HTMLElement {
           </span>
         Dispositivo simulado
       </a>
+
+       <a href="formulario.html">
+        <span class="material-icons">
+         history
+         </span>
+        Historial
+      </a>
       <a href="gps.html">
         <span
           class="material-icons">
