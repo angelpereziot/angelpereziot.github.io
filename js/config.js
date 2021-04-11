@@ -12,10 +12,9 @@ class MiNav extends HTMLElement {
         Inicio
       </a>
       <a href="formulario.html">
-        <span
-          class="material-icons">
-          fact_check
-        </span>
+        <span class="material-icons">
+          smartphone
+          </span>
         Formulario
       </a>
       <a href="gps.html">
