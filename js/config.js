@@ -15,7 +15,7 @@ class MiNav extends HTMLElement {
         <span class="material-icons">
           smartphone
           </span>
-        Formulario
+        Dispositivo simulado
       </a>
       <a href="gps.html">
         <span
