@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width,
+       initial-scale=1.0">
+  <title>Ayuda</title>
+  <meta name="theme-color"
+    content="#81d4f4">
+  <link rel="icon" sizes="32x32"
+    href="favicon.ico">
+  <link rel="manifest"
+    href="site.webmanifest">
+  <link rel="stylesheet"
+    href="css/estilos.css">
+<body>
+  <script type="module"
+    src="js/config.js"></script>
+  <header>
+    <h1>Ayuda</h1>
+  </header>
+  <p>Ejemplo de PWA</p>
+  <campo-dinamico>
+    <output id="agent">
+    </output>
+    <label for="agent">
+      User Agent
+    </label>
+  </campo-dinamico>
+  <p>
+    &copy; 2021
+    Gilberto Pacheco Gallegos
+  </p>
+  <mi-nav></mi-nav>
+  <script type="module">
+    import { USER_AGENT }
+      from "/lib/movil.js";
+    agent.value = USER_AGENT;
+  </script>
+</body>
+</html>
