@@ -64,6 +64,9 @@ const ARCHIVOS = [
   "dis/ProxySalida.js",
   "dis/ResInt.js",
   "dis/utilIoT.js",
+  "cmp/mi-footer.js",
+  ".vscode/settings.json"
+  
   
   
   
