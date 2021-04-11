@@ -24,11 +24,8 @@ const CACHE = "dmppwa-2.03";
  * línea.
  */
 const ARCHIVOS = [
-  "archivos.html",
   "ayuda.html",
   "favicon.ico",
-  "formulario.html",
-  "gps.html",
   "index.html",
   "LICENSE",
   "site.webmanifest",
@@ -54,6 +51,22 @@ const ARCHIVOS = [
   "lib/roboto-v20-latin-regular.woff",
   "lib/roboto-v20-latin-regular.woff2",
   "lib/roboto.css",
+  "lib/fabrica.js",
+  "lib/tiposFire.js",
+  "lib/util.js",
+  "js/CtrlHistorial.js",
+  "js/CtrlMovil.js",
+  "js/init.js",
+  "js/tipos.js",
+  "disp/CtrlDispositivo.js",
+  "disp/ProxyEntrada.js",
+  "disp/ProxyHistorial.js",
+  "dis/ProxySalida.js",
+  "dis/ResInt.js",
+  "dis/utilIoT.js",
+  
+  
+  
   "/"
 ];
 
