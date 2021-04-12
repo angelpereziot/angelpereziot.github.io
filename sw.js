@@ -24,22 +24,32 @@ const CACHE = "dmppwa-2.03";
  * línea.
  */
 const ARCHIVOS = [
-  "archivos.html",
-  "ayuda.html",
+ "historial.html",
+  "dispositivo.html",
+  ".vscode/settings.json",
   "favicon.ico",
-  "formulario.html",
-  "gps.html",
   "index.html",
   "LICENSE",
   "site.webmanifest",
+  "cmp/mi-footer.js",
   "css/colores.css",
   "css/estilos.css",
   "img/icono1024.png",
   "img/icono2048.png",
   "img/icono256.png",
+  "disp/ProxyEntrada.js",
+   "disp/CtrlDispositivo.js",
+   "disp/ProxyHistorial.js",
+   "disp/ProxySalida.js",
+   "disp/ResInt.js ",
+   "disp/utilIoT.js ",
   "js/config.js",
   "js/CtrlDivide.js",
   "js/regSw.js",
+   "js/init.js",
+   "js/CtrlMovil.js ",
+   "js/CtrlHistorial.js",
+   "js/tipos.js ",
   "lib/campo-dinamico.js",
   "lib/campos.css",
   "lib/icono.css",
@@ -54,6 +64,10 @@ const ARCHIVOS = [
   "lib/roboto-v20-latin-regular.woff",
   "lib/roboto-v20-latin-regular.woff2",
   "lib/roboto.css",
+   "lib/util.js",
+   "lib/tiposFire.js ",
+   "lib/fabrica.js ",
+  
   "/"
 ];
 
