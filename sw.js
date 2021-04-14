@@ -2,7 +2,7 @@
 //asignar un nombre y versión al cache
 const CACHE_NAME = 'angelpereziot-b1ce5,
   urlsToCache = [
-    
+    "ayuda.html",
     "script.js",
     "historial.html",
   "dispositivo.html",
