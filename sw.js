@@ -1,30 +1,10 @@
-/* Este archivo debe estar
- * colocado en la carpeta raíz del
- * sitio.
- * 
- * Cualquier cambio en el
- * contenido de este archivo hace
- * que el service worker se
- * reinstale.
- * 
- * Normalmente se cambia el número
- * en el nombre del caché cuando
- * cambia el contenido de los
- * archivos.
- * 
- * Cuando uses GitHub Pages espera
- * 11 minutos después de hacer los
- * cambios en tu sitio, para
- * depués actualizar este archivo.
- */
-const CACHE = "dmppwa-2.03";
 
-/** Archivos requeridos para que
- * la aplicación funcione fuera de
- * línea.
- */
-const ARCHIVOS = [
- "historial.html",
+//asignar un nombre y versión al cache
+const CACHE_NAME = 'iotadangomez-2.06',
+  urlsToCache = [
+    
+    "script.js",
+    "historial.html",
   "dispositivo.html",
   ".vscode/settings.json",
   "favicon.ico",
@@ -67,58 +47,56 @@ const ARCHIVOS = [
    "lib/util.js",
    "lib/tiposFire.js ",
    "lib/fabrica.js ",
-  
   "/"
-];
+  ]
 
-self.addEventListener("install",
-  evt => {
-    console.log("sw instalado.");
-    /* Realiza la instalación.
-     * Carga los archivos
-     * requeridos en la caché. */
-    // @ts-ignore
-    evt.waitUntil(cargaCache());
-  });
+//durante la fase de instalación, generalmente se almacena en caché los activos estáticos
+self.addEventListener('install', e => {
+  e.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => {
+        return cache.addAll(urlsToCache)
+          .then(() => self.skipWaiting())
+      })
+      .catch(err => console.log('Falló registro de cache', err))
+  )
+})
 
-/* Toma los archivos solicitados
- * de la caché; si no los
- * encuentra, se descargan. */
-self.addEventListener("fetch",
-  evt => {
-    // @ts-ignore
-    if (evt.request.method ===
-      "GET") {
-      // @ts-ignore
-      evt.respondWith(
-        usaCache(evt));
-    }
-  });
+//una vez que se instala el SW, se activa y busca los recursos para hacer que funcione sin conexión
+self.addEventListener('activate', e => {
+  const cacheWhitelist = [CACHE_NAME]
 
-self.addEventListener("activate",
-  () =>
-    console.log("sw activo."));
+  e.waitUntil(
+    caches.keys()
+      .then(cacheNames => {
+        return Promise.all(
+          cacheNames.map(cacheName => {
+            //Eliminamos lo que ya no se necesita en cache
+            if (cacheWhitelist.indexOf(cacheName) === -1) {
+              return caches.delete(cacheName)
+            }
+          })
+        )
+      })
+      // Le indica al SW activar el cache actual
+      .then(() => self.clients.claim())
+  )
+})
 
-async function cargaCache() {
-  console.log(
-    "Intentando cargar cache",
-    CACHE);
-  const cache =
-    await caches.open(CACHE);
-  await cache.addAll(ARCHIVOS);
-  console.log("Cache", CACHE,
-    "cargado");
-}
+//cuando el navegador recupera una url
+self.addEventListener('fetch', e => {
+  //Responder ya sea con el objeto en caché o continuar y buscar la url real
+  e.respondWith(
+    caches.match(e.request)
+      .then(res => {
+        if (res) {
+          //recuperar del cache
+          return res
+        }
+        //recuperar de la petición a la url
+        return fetch(e.request)
+      })
+  )
+})
 
-async function usaCache(evt) {
-  const cache =
-    await caches.open(CACHE);
-  const response =
-    await cache.match(evt.request,
-      { ignoreSearch: true });
-  if (response) {
-    return response;
-  } else {
-    return fetch(evt.request);
-  }
-}
+
