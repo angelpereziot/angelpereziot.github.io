@@ -1,6 +1,6 @@
 
 //asignar un nombre y versión al cache
-const CACHE_NAME = 'iotadangomez-2.06',
+const CACHE_NAME = 'angelpereziot-b1ce5,
   urlsToCache = [
     
     "script.js",
